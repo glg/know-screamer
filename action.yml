@@ -1,6 +1,6 @@
-name: "GDS Cluster Config Screamer"
-description: "Provides validation for GDS Cluster Configs"
-author: Shawn Rushefsky
+name: "GLG Know Screamer"
+description: "Provides validation for GLG Know Portal"
+author: Magno West
 inputs:
   token:
     description: Should be secrets.GITHUB_TOKEN
