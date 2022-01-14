@@ -1,0 +1,30 @@
+{
+  "name": "template-screamer",
+  "version": "1.0.0",
+  "description": "This is a github action for validating PRs",
+  "main": "module.js",
+  "scripts": {
+    "test": "LOG_LEVEL=error mocha --recursive",
+    "coverage": "npx nyc npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/glg-public/screamer.tml.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/glg-public/screamer.tml/issues"
+  },
+  "homepage": "https://github.com/glg-public/screamer.tml#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.6",
+    "@actions/github": "^4.0.0",
+    "loglevel": "^1.7.1"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^8.2.1"
+  }
+}
