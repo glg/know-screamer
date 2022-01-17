@@ -43,7 +43,7 @@ async function run() {
 
     // This should be a list of files you want to scream at
     const filesToCheck = [
-      "wikis.json"
+      "./scripts/wikis.json"
     ];
 
     const dirsTocheck = await getAllRelevantFiles(files, filesToCheck);
