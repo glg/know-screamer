@@ -48,8 +48,6 @@ async function run() {
 
     const dirsTocheck = await getAllRelevantFiles(files, filesToCheck);
 
-    console.log("****This is the output for dirsTocheck**** "+ dirsTocheck)
-
     // We want to track how all the checks go
     const counts = {
       success: 0,
