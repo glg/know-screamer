@@ -2,7 +2,6 @@ require("../typedefs");
 const log = require("loglevel");
 const { getLinesForJSON, suggest, getLineWithinObject } = require("../util");
 
-console.log(directory)
 /**
  * Checks the validity of a wikis.json
  * @param {Directory} directory An object containing information about files in a directory

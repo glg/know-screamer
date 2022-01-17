@@ -18,5 +18,6 @@ describe("getContents", () => {
       somethingJsonPath,
       somethingJsonContents,
     });
+    console.log(directory)
   });
 });
