@@ -24,7 +24,6 @@ async function getAllRelevantFiles(files, filesToCheck) {
     ).map((directory) => getContents(directory, filesToCheck))
   );
 }
-console.log(directory)
 /**
  * Leaves the correct type of comment for a given result
  * @param {Octokit} octokit A configured octokit client
