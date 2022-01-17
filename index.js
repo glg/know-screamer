@@ -29,8 +29,8 @@ async function run() {
   const pull_number = pr.number;
   const sha = pr.head.sha;
 
-  console.log(repo)
-  console.log(pr)
+  console.log("****This is the output for repo**** " + repo)
+  console.log("****This is the out put for pr**** " + pr)
   
   try {
     await clearPreviousRunComments(octokit, { owner, repo, pull_number });
@@ -48,7 +48,7 @@ async function run() {
 
     const dirsTocheck = await getAllRelevantFiles(files, filesToCheck);
 
-    console.log(dirsTocheck)
+    console.log("****This is the output for dirsTocheck**** "+ dirsTocheck)
 
     // We want to track how all the checks go
     const counts = {
