@@ -28,9 +28,6 @@ async function run() {
   const repo = pr.base.repo.name;
   const pull_number = pr.number;
   const sha = pr.head.sha;
-
-  console.log(repo)
-  console.log(pr)
   
   try {
     await clearPreviousRunComments(octokit, { owner, repo, pull_number });
@@ -43,7 +40,8 @@ async function run() {
 
     // This should be a list of files you want to scream at
     const filesToCheck = [
-      "wikis.json"
+      "wikis.json",
+      "package.json"
     ];
 
     const dirsTocheck = await getAllRelevantFiles(files, filesToCheck);
