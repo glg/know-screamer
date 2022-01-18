@@ -17,7 +17,9 @@ async function getAllRelevantFiles(files, filesToCheck) {
     Array.from(
       new Set(
         files
-          .filter((f) => filesToCheck.includes(f.filename.toLowerCase()))
+          .filter((f) =>
+          filesToCheck.includes(path.basename(f.filename).toLowerCase())
+        )
           .filter((f) => f.status !== "removed")
           .map((f) => path.dirname(f.filename))
       )
