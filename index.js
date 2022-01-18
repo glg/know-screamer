@@ -57,7 +57,8 @@ async function run() {
     };
 
     for (const dir of dirsTocheck) {
-      for (const check of checks) {
+      for (const checkName of Object.keys(checks)) {
+        const check = checks[checkName];
         let results = [];
         try {
           results = await check(dir, github.context, inputs, httpGet);
