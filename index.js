@@ -38,7 +38,6 @@ async function run() {
       pull_number,
     });
 
-    console.log(files)
     // This should be a list of files you want to scream at
     const filesToCheck = [
       "wikis.json",
@@ -46,7 +45,6 @@ async function run() {
 
     const dirsTocheck = await getAllRelevantFiles(files, filesToCheck);
 
-    console.log(dirsTocheck)
 
     // We want to track how all the checks go
     const counts = {

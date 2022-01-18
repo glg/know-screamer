@@ -17,7 +17,6 @@ async function wikisJsonIsValid(directory) {
     log.info(`No wikis.json present, skipping - ${directory.serviceName}`);
     return results;
   }
-  console.log("****This is the output for directory.wikisJsonContents**** " + directory.wikisJsonContents)
   log.info(`wikis.json is valid - ${directory.wikisJsonPath}`);
 
   // wikis.json must be valid json
