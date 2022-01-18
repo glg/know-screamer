@@ -37,8 +37,6 @@ async function wikisJsonIsValid(directory) {
       },
     ];
   }
-  console.log("****This is the output for wikisJson**** " + wikisJson)
-
   // Mark this as valid, so future checks don't have to redo this work
   if (results.length === 0) {
     directory.wikisJson = wikisJson;
