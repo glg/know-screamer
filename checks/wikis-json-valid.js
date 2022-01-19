@@ -17,7 +17,6 @@ async function wikisJsonIsValid(directory) {
     log.info(`No wikis.json present, skipping - ${directory.serviceName}`);
     return results;
   }
-
   log.info(`wikis.json is valid - ${directory.wikisJsonPath}`);
 
   // wikis.json must be valid json
@@ -37,7 +36,6 @@ async function wikisJsonIsValid(directory) {
       },
     ];
   }
-
   // Mark this as valid, so future checks don't have to redo this work
   if (results.length === 0) {
     directory.wikisJson = wikisJson;

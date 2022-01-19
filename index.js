@@ -1,7 +1,7 @@
 require("./typedefs");
 const core = require("@actions/core");
 const github = require("@actions/github");
-const checks = require("./checks").all;
+const checks = require("./checks");
 const log = require("loglevel");
 const {
   clearPreviousRunComments,
@@ -28,7 +28,7 @@ async function run() {
   const repo = pr.base.repo.name;
   const pull_number = pr.number;
   const sha = pr.head.sha;
-
+  
   try {
     await clearPreviousRunComments(octokit, { owner, repo, pull_number });
 
@@ -40,10 +40,11 @@ async function run() {
 
     // This should be a list of files you want to scream at
     const filesToCheck = [
-      "wikis.json"
+      "wikis.json",
     ];
 
     const dirsTocheck = await getAllRelevantFiles(files, filesToCheck);
+
 
     // We want to track how all the checks go
     const counts = {
@@ -54,7 +55,8 @@ async function run() {
     };
 
     for (const dir of dirsTocheck) {
-      for (const check of checks) {
+      for (const checkName of Object.keys(checks)) {
+        const check = checks[checkName];
         let results = [];
         try {
           results = await check(dir, github.context, inputs, httpGet);
